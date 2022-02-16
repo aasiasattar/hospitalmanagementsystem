@@ -1,0 +1,50 @@
+{% load static %}
+{% block content %}
+{% include 'admin_navigation.html' %}
+
+<marquee style="font-family: 'Monotype Corsiva' ; font-size : 25px ; color : yellow ; background-color : black ; font-weight : bold ; margin-top: 1%">
+    Add Patient
+ </marquee>
+ <hr>
+<hr>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <label style="font-weight: bold;">Patient Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter Patient Name " required>
+        <br>
+        
+        <label style="font-weight: bold;">Gender</label>
+        <input type="radio"  name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br>
+        <br>
+        <label style="font-weight: bold;">Contact Number</label>
+        <input type="number" class="form-control" name="num" placeholder="Enter Number" required>
+        <label style="font-weight: bold;">Address</label>
+        <input type="textarea" class="form-control" name="address" placeholder="Enter Address" required>
+        <br>
+
+        <input type="submit" class="btn btn-primary" value="Submit" style="background-color: black;color: yellow; font-weight: bold;">
+    
+    </form>
+
+</div>
+
+{% if error == "no" %}
+<script>
+    alert('Record Added Successfully');
+    window.location = ('{% url 'view_patient' %}')
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong! Try Again');
+</script>
+{% endif %}
+
+
+
+
+{% endblock %}

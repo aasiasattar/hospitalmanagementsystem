@@ -1,0 +1,50 @@
+<html>
+    <head>
+        {% load static %}
+        <title>
+            Hodpital Management Syatem
+        </title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        
+    </head> 
+
+    
+   <body style="background-color: antiquewhite;">
+
+       
+
+<!--Navbar code start-->
+ 
+<nav class="navbar navbar-expand-sm " style="background-color: maroon; margin-top: 1%;">
+    <div class="container">
+    <a class="navbar-brand" href="#" style="color: white; font-weight: bold;"> Hospital Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myMenu">
+    <span class="navbar-toggler-icon">
+        <i class="fas fa bars" style="color: white; font-size: 28px;"></i>
+    </span>
+        </button>
+        <div class="collapse navbar-collapse" id="myMenu">
+            <ul class="navbar-nav text-center ml-auto">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'a_login' %}"><i class="fa fa-home"> Home</i></a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'about' %}"><i class="fa fa-info-circle"> About</i></a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'contact' %}"><i class="fa fa-phone"> Contact</i></a></li>
+                
+               
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+</body>
+
+</html>  

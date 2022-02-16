@@ -1,0 +1,60 @@
+{% load static %}
+{% block content%}
+{% include 'admin_navigation.html' %}
+
+
+<marquee style="font-family: 'Monotype Corsiva' ; font-size : 25px ; color : yellow ; background-color : black ; font-weight : bold ; margin-top: 1%">
+    Add Appointment
+ </marquee>
+ <hr>
+<hr>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <label style="font-weight: bold;">Doctor Name</label>
+        <select name="doctor" class="form-control">
+            {% for i in doctor %}
+            <option value="{{ i.name }}" > {{ i.name }}  [{{ i.id }}] </option>
+            {% endfor %}
+        </select>
+
+
+        <label style="font-weight: bold;">Patient Name</label>
+        <select name="patient" class="form-control">
+            {% for i in patient %}
+            <option value="{{ i.name }}">{{ i.name }}  [{{ i.id }}] </option>
+            {% endfor %}
+        </select>
+
+
+        <label style="font-weight: bold;">Date</label>
+        <input type="date" class="form-control" name="date" required>
+        <label style="font-weight: bold;">Time</label>
+        <input type="time" class="form-control" name="time" required>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Submit" style="background-color: black;color: yellow; font-weight: bold;">
+    
+    </form>
+
+</div>
+
+{% if error == "no" %}
+<script>
+    alert('Appointment Added Successfully');
+    window.location = ('{% url 'view_appointment' %}')
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong! Try Again');
+</script>
+{% endif %}
+
+
+
+
+
+
+
+ {% endblock %}

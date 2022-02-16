@@ -1,0 +1,44 @@
+{% load static %}
+
+{% block content %}
+
+{% include 'admin_navigation.html'  %}
+
+<style>
+    .mydiv:hover{
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+        transform: translateY(-20px);
+    }
+</style>
+
+<marquee style="font-family: 'Monotype Corsiva' ; font-size : 25px ; color : yellow ; background-color : black ; font-weight : bold ; margin-top: 1%">
+    Admin Home
+ </marquee>
+
+
+<div class="container mt-5">
+    <br><br>
+    <div class="row mt-5">
+        <div class="col-md-4 mydiv" >
+        <a href="{% url 'view_doctor' %}" style="color: black;" > <h4 class="text-center"><i class="fa fa-user-md" style="font-size:32px;color:maroon"></i> Total Doctors</h4></a>
+            <p class="text-center font-weight-bold">{{ dcount }}</p>
+        <hr class="rounded">
+        </div>
+
+        <div class="col-md-4 mydiv">
+            <a href="{% url 'view_patient' %}" style="color: black;" ><h4 class="text-center"><i class="fa fa-ambulance" style="font-size:32px;color:maroon"></i> Total Patients</h4></a>
+           <p class="text-center font-weight-bold">{{pcount}}    
+            <hr class="rounded">
+        </div>
+
+        <div class="col-md-4 mydiv">
+            <a href="{% url 'view_appointment' %}" style="color: black;" ><h4 class="text-center"><i class="fa fa-calendar" style="font-size:32px;color:maroon"></i> Total Appointments</h4></a>
+            <p class="text-center font-weight-bold">{{ acount }}    
+                <hr class="rounded">
+         </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

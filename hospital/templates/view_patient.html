@@ -1,0 +1,47 @@
+{% load static %}
+{% block content %}
+{% include 'admin_navigation.html' %}
+
+
+<marquee style="font-family: 'Monotype Corsiva' ; font-size : 25px ; color : yellow ; background-color : black ; font-weight : bold ; margin-top: 1%">
+    View Patient
+ </marquee>
+ <hr>
+ <br>
+<div class="container">
+    <table class="table table-hover" id="example">
+        <thead style="background-color: maroon; color: white;">
+        <tr class="text-center ">
+            
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Gender</th>
+            <th>Contact Number</th>
+            <th>Patient Address</th>
+            <th>Delete</th>
+
+        </thead>
+        </tr>
+        {% for i in patient %}
+        <tr class="text-center">
+            
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.number }}</td>
+            <td>{{ i.gender }}</td>
+            <td>{{ i.address }}</td>
+           <td><a href="{% url 'delete_patient' i.id %}"  class = "btn btn-danger btn-sm  fa fa-trash" onclick="return confirm('Are you want to delete this record?')"> Delete</a></td>
+          
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+
+
+
+
+
+
+ {% endblock %}

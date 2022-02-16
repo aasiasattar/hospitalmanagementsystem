@@ -1,0 +1,50 @@
+{% load static %}
+{% block content %}
+{% include 'navigation.html' %}
+
+
+
+<marquee style="font-family: 'Monotype Corsiva' ; font-size : 25px ; color : yellow ; background-color : black ; font-weight : bold ; margin-top: 1%">
+    About Us
+ </marquee>
+ <hr>
+ <br><br><br>
+ <div class="container">
+ <div class="row">
+     <div class="col-sm-4 text-center">
+         <img src="{% static 'images/about.jpg' %}" width="300" height="200" class="img-responsive">
+     </div>
+     <div class="col-sm-8 font-weight-bold mt-5">
+         Hello friends.....<br>
+         This is simple Hospital Management Project Developed
+         <br>
+         by abc ,xyz using Punkaj Panjwani using HtML , CSS , Javascript , Bootstrap , Python Django
+         and sqlite....
+     </div>
+ </div>
+ <br><br><br>
+ <div class="row">
+    
+     <div class="col-sm-8 font-weight-bold mt-5">
+         Hello friends.....<br>
+         This is simple Hospital Management Project Developed
+         <br>
+         by abc ,xyz using Punkaj Panjwani using HtML , CSS , Javascript , Bootstrap , Python Django
+         and sqlite....
+        </div>
+         <div class="col-sm-4 text-center">
+            <img src="{% static 'images/team.jpg' %}" width="300" height="200" class="img-responsive">
+        </div>
+     
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+ {% endblock %}

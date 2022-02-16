@@ -1,0 +1,104 @@
+<html>
+    <head>
+        {% load static %}
+        <title>
+            Hodpital Management Syatem
+        </title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+
+
+
+        <!-- Data Tables Start (Data Tables with Export buttons (Java script code place script tag)-->
+        
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable( {
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copyHtml5',
+                        'excelHtml5',
+                        'csvHtml5',
+                        'pdfHtml5'
+                    ]
+                } );
+            } );
+           
+            </script>
+                                        <!-- java script cdn place in script tag with src-->
+            <script src = "https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src = "https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+            <script src = "//cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+            <script src = "//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+            <script src = "//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+            <script src = "//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+            <script src = "//cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+    
+                                         <!--Css files place in <link rel = "stylesheet" href ="">-->
+            <link rel = "stylesheet" href = "//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+            <link rel = "stylesheet" href = "//cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+    
+            <!-- End DataTables-->
+        
+    </head> 
+
+    
+   <body style="background-color: antiquewhite;">
+
+       
+
+<!--Navbar code start-->
+ 
+<nav class="navbar navbar-expand-sm " style="background-color: maroon; margin-top: 1%;">
+    <div class="container">
+    <a class="navbar-brand" href="#" style="color: white; font-weight: bold;"> Hospital Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myMenu">
+    <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myMenu">
+            <ul class="navbar-nav text-center ml-auto">
+                
+                <li class="nav-item"> <a class="nav-link" href="{% url 'a_home' %}"><i class="fa fa-home" style="font-weight: bold; margin-top: 4px;"> Home</i></a></li>
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-md"></i> Doctor</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'add_doctor' %}">Add Doctor</a>
+                    <a class="dropdown-item" href="{% url 'view_doctor' %}">View Doctor</a>
+                </div>
+                </li>
+
+                
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-wheelchair"></i> Patient</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'add_patient' %}">Add Patient</a>
+                        <a class="dropdown-item" href="{% url 'view_patient' %}">View Patient</a>
+                    </div>
+                    </li>
+
+                    
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-calendar"></i>  Appointment</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'add_appointment' %}">Add Appointment</a>
+                        <a class="dropdown-item" href="{% url 'view_appointment' %}">View Appointment</a>
+                    </div>
+                    </li>
+                
+                <li class="nav-item"> <a class="nav-link" href="{% url 'a_logout' %}"> Logout</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+</body>
+
+</html>  

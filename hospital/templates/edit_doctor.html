@@ -1,0 +1,48 @@
+{% include 'admin_navigation.html' %}
+{% block content %}
+
+
+<marquee style="font-family: 'Monotype Corsiva' ; font-size : 25px ; color : yellow ; background-color : black ; font-weight : bold ; margin-top: 1%">
+    Edit Doctor
+ </marquee>
+ <hr>
+<hr>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <label style="font-weight: bold;">Doctor Name</label>
+        <input type="text" class="form-control" name="name" value="{{ doc.name }}" required>
+        <label style="font-weight: bold;">Contact Number</label>
+        <input type="number" class="form-control" name="num" value="{{ doc.number }}" required>
+        <label style="font-weight: bold;">Specialization</label>
+        <input type="text" class="form-control" name="special" value="{{ doc.specialization }}" required>
+        <br>
+        <input type="submit" value="Submit" class="btn btn-primary" style="color: yellow; width: 100% ; background-color: black; text-align: center ; margin-top: 20px">
+    
+    </form>
+
+</div>
+
+
+{% if error == "no" %}
+<script>
+    alert('Doctor record updated Successfully');
+    window.location = ('{% url 'view_doctor' %}')
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong! Try Again');
+</script>
+{% endif %}
+
+
+
+
+
+
+
+
+
+{% endblock %}
